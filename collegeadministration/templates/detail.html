@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+    {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <img src="{{student.propic.url}}" height="300" width="300"/><br>
+        </div>
+        <div class="col-md-6">
+            <h1>{{student.name_student}}</h1> <br>
+            <h4>{{student.address}}</h4> <br>
+            <h4>{{student.dob}}</h4> <br>
+            <a class="btn btn-warning" href="{% url 'collegeapp:update' student.id %}">update</a>
+<a class="btn btn-danger" href="{% url 'collegeapp:delete' student.id %}">Delete</a>
+
+        </div>
+            </div>
+</div>
+
+    {% endblock %}
+

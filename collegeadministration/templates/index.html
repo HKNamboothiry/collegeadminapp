@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+                            <div class="row">
+            {% for i in student_details %}
+        <div class="col-md-3">
+        <div class="card" style="width: 18rem; height: 600px">
+            <center>
+  <img class="card-img-top" src="{{i.propic.url}}" alt="Card image cap" style="width: 10rem; margin-top: 20px; margin-bottom: 20px">
+            </center>
+  <div class="card-body">
+    <center><h5 class="card-title">{{i.name_student}}</h5></center>
+    <center><p class="card-text">{{i.dob}}</p></center>
+  </div>
+  <div class="card-body">
+      <center>
+    <a href="{% url 'collegeapp:detail' i.id %}" class="card-link">View Detail</a>
+          </center>
+  </div>
+</div>
+        </div>
+                                            {% endfor %}
+
+        </div>
+
+    </div>
+{% endblock %}
